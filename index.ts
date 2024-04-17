@@ -3,75 +3,39 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 
-do{
-let answer = await inquirer.prompt([
-  {
-    message: "Enter your First Value",
+
+console.log(`
+============== Asjad Nawaz Calculator ===============`)
+
+let calculator= await inquirer.prompt([{
+    message: "Enter Your First Value:",
     type: "number",
-    name: "FirstNumber",
-  },
-  {
-    message: "Enter your Second Number",
+    name: "FirstValue"
+},
+{
+    message: "Enter Your Second Value:",
     type: "number",
-    name: "SecondNumber",
-  },
-  {
-    message: "Please Select one of the Operators to start Operations",
+    name: "SecondValue"
+},
+
+{
+    message: "Choose one operator to start operation",
     type: "list",
-    name: "Operators",
-    choices: [
-      "Addition",
-      "Subtraction",
-      "Multiplication",
-      "Division",
-      "Modulo",
-    ],
-  },
+    name: "operators",
+    choices: ["+", "-", "*", "/"]
+}
 ]);
 
-// Conditional Statements
 
-if (answer.Operators === "Addition") {
-  console.log(
-    "Your answer is" +
-      " " +
-      chalk.greenBright.bold(answer.FirstNumber + answer.SecondNumber)
-  );
+if (calculator.operators == "+") {
+    console.log((calculator.FirstValue) +" "+ chalk.yellowBright("+") +" "+ (calculator.SecondValue) +" "+ "= " +chalk.bold.green(calculator.FirstValue + calculator.SecondValue));
 }
-
-if (answer.Operators === "Subtraction") {
-  console.log(
-    "Your answer is" +
-      " " +
-      chalk.greenBright.bold(answer.FirstNumber - answer.SecondNumber)
-  );
+if (calculator.operators == "-") {
+    console.log((calculator.FirstValue) +" "+ chalk.yellowBright("-") +" "+ (calculator.SecondValue) +" "+ "= " +chalk.bold.green(calculator.FirstValue - calculator.SecondValue));
 }
-
-if (answer.Operators === "Multiplication") {
-  console.log(
-    "Your answer is" +
-      " " +
-      chalk.greenBright.bold(answer.FirstNumber * answer.SecondNumber)
-  );
+if (calculator.operators == "*") {
+    console.log((calculator.FirstValue) +" "+ chalk.yellowBright("*") +" "+ (calculator.SecondValue) +" "+ "= " +chalk.bold.green(calculator.FirstValue * calculator.SecondValue));
 }
-
-if (answer.Operators === "Divison") {
-  console.log(
-    "Your answer is" +
-      " " +
-      chalk.greenBright.bold(answer.FirstNumber / answer.SecondNumber)
-  );
+if (calculator.operators == "/") {
+    console.log((calculator.FirstValue) +" "+ chalk.yellowBright("/") +" "+ (calculator.SecondValue) +" "+ "= " +chalk.bold.green(calculator.FirstValue / calculator.SecondValue));
 }
-
-if (answer.Operators === "Modulo") {
-  console.log(
-    "Your answer is" +
-      " " +
-      chalk.greenBright.bold(answer.FirstNumber % answer.SecondNumber)
-  );
-}
-
-
-}while(true);
-
-
