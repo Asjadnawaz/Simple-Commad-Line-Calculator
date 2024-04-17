@@ -3,6 +3,7 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 
+do{
 let answer = await inquirer.prompt([
   {
     message: "Enter your First Value",
@@ -69,3 +70,8 @@ if (answer.Operators === "Modulo") {
       chalk.greenBright.bold(answer.FirstNumber % answer.SecondNumber)
   );
 }
+
+
+}while(true);
+
+
